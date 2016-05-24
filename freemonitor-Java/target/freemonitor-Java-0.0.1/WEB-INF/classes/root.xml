@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!--
+  - This file is included by the struts.xml file as an example
+  - of how to break up the configuration file into multiple files.
+-->
+<struts>
+  <!-- 根目录 / -->
+    <package name="root" namespace="/" extends="default"> 
+    	<action name="" class="com.free4lab.freemonitor.action.GetAllStatusAction">
+			<result name="success">/allstatus.jsp</result>
+		</action>
+
+		<action name="login" class="com.free4lab.freemonitor.account.LoginAction">
+			<result name="success">/allstatus.jsp</result>
+		</action>
+
+    	<action name="main" class="com.free4lab.freemonitor.action.GetAllStatusAction">
+			<result name="success">/allstatus.jsp</result>
+		</action>
+		
+		<action name="oldconfig" class="com.free4lab.freemonitor.action.GetOldConfigAction">
+			<result name="success">/monitorconfig.jsp</result>
+		</action>
+		<action name="editconfig" class="com.free4lab.freemonitor.action.EditConfigAction">
+			<result type="json"></result>
+		</action>
+		
+		<action name="logs" class="com.free4lab.freemonitor.action.GetLogsAction">
+			<result name="success">/logs.jsp</result>
+		</action>
+		<action name="logshow" class="com.free4lab.freemonitor.action.GetLogsAction">
+			<result type="json"></result>
+		</action>
+    </package>
+</struts>
